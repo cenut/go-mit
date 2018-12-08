@@ -142,7 +142,7 @@ func (a *RemoteAgent) GetWork() ([7]string, error) {
 		balance:=newStateDb.GetBalance(block.Header().Coinbase)
 		//posTarget
 		balanceTarget:=new(big.Int).Mul(balance,big.NewInt(1))
-		balanceTarget=balanceTarget.Div(balanceTarget,big.NewInt(1000000000000000000))
+		balanceTarget=balanceTarget.Div(balanceTarget,big.NewInt(1000000000000000))
 		//posTarget:=new(big.Int).Div(new(big.Int).Mul(maxUint256,balanceTarget),block.Header().Difficulty)
 		m := big.NewInt(1)
 		m.Lsh(m, 255)
