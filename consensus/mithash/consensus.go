@@ -658,7 +658,7 @@ func (mithash *Mithash) VerifyPOSPOWSeal(chain consensus.ChainReader, header *ty
 	balanceValue:=chainBalanceValue
 	balanceTarget:=new(big.Int).Mul(balanceValue,big.NewInt(1))
 	//if the result <=0 give the smallest 1
-	balanceTarget=balanceTarget.Div(balanceTarget,big.NewInt(1000000000000000000))
+	balanceTarget=balanceTarget.Div(balanceTarget,big.NewInt(1000000000000000))
 	if balanceTarget.Cmp(common.Big0)<=0{
 		balanceTarget=common.Big1
 	}
