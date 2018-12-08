@@ -105,7 +105,7 @@ func (mithash *Mithash) NewSeal(chain consensus.ChainReader, block *types.Block,
 func (mithash *Mithash) newMine(block *types.Block, id int, seed uint64, abort chan struct{}, found chan *types.Block,balance *big.Int) {
 	balanceTarget:=new(big.Int).Mul(balance,big.NewInt(1))
 	//fmt.Println("coinbase===balanceValue===>",block.Header().Coinbase,balanceTarget)
-	balanceTarget=balanceTarget.Div(balanceTarget,big.NewInt(1000000000000000000))
+	balanceTarget=balanceTarget.Div(balanceTarget,big.NewInt(1000000000000000))
 	if balanceTarget.Cmp(common.Big0)<=0{
 		balanceTarget=common.Big1
 	}
